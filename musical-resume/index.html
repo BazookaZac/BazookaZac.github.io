@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bazooka Zac EPK</title>
+<meta name="description" content="Bazooka Zac: multi-instrumentalist producer and performer, specializing in open-source on Ableton Live.">
+<link rel="icon" href="../img/zac-maizy-240.webp">
+<meta name="claude:viewport-fit-sides" content="cover"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap"><style>
+/* Layout: one quiet letter-size sheet, generous margins, two columns under a single-line name */
+:root { --bg:#E9E6E0; --paper:#F1EEE9; --ink:#1E1D1B; --mute:#75716A; --faint:#A39E95; --line:#CEC9BF; --accent:#5D6655;
+  --serif:'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif; --sans:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0 }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#161614; --paper:#1D1D1A; --ink:#E7E3DB; --mute:#9D988E; --faint:#6E6A63; --line:#2E2D29; --accent:#A8B29A; color-scheme:dark } }
+:root[data-theme="dark"] { --bg:#161614; --paper:#1D1D1A; --ink:#E7E3DB; --mute:#9D988E; --faint:#6E6A63; --line:#2E2D29; --accent:#A8B29A; color-scheme:dark }
+body { background:var(--bg); color:var(--ink); font-family:var(--sans) }
+.page { max-width:8.5in; margin:0 auto; padding-block:.7in .5in; padding-left:max(20px, env(safe-area-inset-left, 0px)); padding-right:max(20px, env(safe-area-inset-right, 0px)) }
+@media (min-width:760px) { .page { padding-left:.75in; padding-right:.75in } }
+.foot { margin-top:.6in }
+.pdf { font:500 6.8pt var(--sans); letter-spacing:.32em; text-transform:uppercase; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:3px; transition:border-color .3s }
+.pdf:hover, .pdf:focus-visible { border-color:var(--accent); outline:none }
+@media (max-width:640px) { h1 { font-size:12.5vw } .cols { grid-template-columns:1fr; gap:.32in } }
+.page { position:relative }
+.top { display:flex; justify-content:space-between; align-items:center; font:500 6.8pt var(--sans); letter-spacing:.32em; text-transform:uppercase; color:var(--faint) }
+h1 { font:400 46pt/1 var(--serif); letter-spacing:-.01em; white-space:nowrap; margin-top:.5in; color:var(--ink) }
+h1 em { font-style:italic; color:var(--accent) }
+.tag { margin-top:14px; display:flex; flex-direction:column; gap:3px }
+.tag .a { font:400 11pt/1.4 var(--sans); color:var(--ink); letter-spacing:.01em }
+.tag .b { font:italic 400 11.5pt/1.4 var(--serif); color:var(--mute) }
+.tone { display:block; width:100%; height:30px; margin:.26in 0 .2in }
+.contact { display:flex; flex-wrap:wrap; gap:8px 34px; font:400 8.4pt var(--sans); letter-spacing:.04em; color:var(--ink); padding-bottom:.24in; border-bottom:1px solid var(--line) }
+.contact em { font-style:normal; font-size:6.4pt; letter-spacing:.3em; text-transform:uppercase; color:var(--faint); margin-right:9px }
+.cols { display:grid; grid-template-columns:1fr 1fr; gap:.5in; margin-top:.3in }
+.cols > div { min-width:0 }
+h2 { font:500 6.6pt var(--sans); letter-spacing:.32em; text-transform:uppercase; color:var(--mute); margin-bottom:10px }
+section + section { margin-top:.27in }
+ul { list-style:none }
+.tl li { display:grid; grid-template-columns:38px 1fr; gap:8px; padding:5px 0; border-top:1px solid var(--line) }
+.tl li:first-child { border-top:0; padding-top:0 }
+.yr { font:400 8pt var(--sans); color:var(--faint); font-variant-numeric:tabular-nums; padding-top:1px; letter-spacing:.04em }
+.tl b, .ft b { font:500 9.4pt var(--sans); color:var(--ink) }
+.tl i, .ft i { font:italic 400 9pt var(--serif); color:var(--accent); margin-left:8px }
+.loc { display:block; font:300 8pt var(--sans); color:var(--mute); margin-top:1px }
+.note { font:italic 400 9.2pt/1.5 var(--serif); color:var(--mute); margin-top:10px; padding-left:46px }
+.fl li { padding:5px 0; border-top:1px solid var(--line) } .fl li:first-child { border-top:0; padding-top:0 }
+.fl p { font:300 8.4pt/1.45 var(--sans); color:var(--mute); margin-top:1px }
+.fl em { font-family:var(--serif); font-style:italic; color:var(--ink) }
+.edu .h { display:flex; justify-content:space-between; align-items:baseline }
+.edu b { font:400 13pt var(--serif); color:var(--ink) }
+.edu ul { margin-top:6px; display:flex; flex-direction:column; gap:2px }
+.edu li { font:300 8.4pt var(--sans); color:var(--mute) }
+.press { font:300 8.4pt/1.75 var(--sans); color:var(--ink) }
+.press .sep { color:var(--faint) }
+.foot { display:flex; justify-content:space-between; font:500 6.4pt var(--sans); letter-spacing:.32em; color:var(--faint); text-transform:uppercase }
+
+/* ⭐ ONE SCREEN, NO SCROLL (Zac 2026-11-16: "zoom in ... to take one section of the monitor, no need to scroll, but we
+   utilize all that open space"). On a wide screen the sheet turns landscape: three columns under the name, then the whole
+   sheet is zoomed up to fill the window. Phones and narrow windows keep the original letter-size sheet. */
+@media (min-width:1000px) and (min-aspect-ratio:5/4) {
+  .page { max-width:13.2in; padding-block:.42in .3in }
+  h1 { margin-top:.28in }
+  .tone { margin:.18in 0 .14in }
+  .cols { grid-template-columns:1fr 1fr 1fr; grid-template-areas:"perf free edu" "perf awards press"; column-gap:.5in; row-gap:.26in; align-items:start }
+  .cols > div { display:contents }
+  .cols section { margin-top:0 !important }
+  .s-perf { grid-area:perf } .s-free { grid-area:free } .s-awards { grid-area:awards } .s-edu { grid-area:edu } .s-press { grid-area:press }
+}
+</style>
+</head>
+<body>
+<div class="page">
+ <div class="top"><span>Press Kit</span><a class="pdf" href="bazooka-zac-epk.pdf" target="_blank" rel="noopener">Download PDF</a></div>
+ <h1>Bazooka <em>Zac</em></h1>
+ <div class="tag"><span class="a">Multi-instrumentalist producer and performer</span><span class="b">Specializing in open-source on Ableton Live</span></div>
+ <svg class="tone" viewBox="0 0 576 40" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="var(--faint)"/><stop offset=".5" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--faint)"/></linearGradient></defs><g fill="url(#g)"><rect x="0" y="18.5" width="2.4" height="3.0" rx="1.2"/><rect x="6" y="17.3" width="2.4" height="5.4" rx="1.2"/><rect x="12" y="16.2" width="2.4" height="7.6" rx="1.2"/><rect x="18" y="15.6" width="2.4" height="8.8" rx="1.2"/><rect x="24" y="15.8" width="2.4" height="8.5" rx="1.2"/><rect x="30" y="16.2" width="2.4" height="7.5" rx="1.2"/><rect x="36" y="15.8" width="2.4" height="8.5" rx="1.2"/><rect x="42" y="15.7" width="2.4" height="8.7" rx="1.2"/><rect x="48" y="14.5" width="2.4" height="10.9" rx="1.2"/><rect x="54" y="13.9" width="2.4" height="12.2" rx="1.2"/><rect x="60" y="14.5" width="2.4" height="11.0" rx="1.2"/><rect x="66" y="13.3" width="2.4" height="13.5" rx="1.2"/><rect x="72" y="10.7" width="2.4" height="18.5" rx="1.2"/><rect x="78" y="9.4" width="2.4" height="21.3" rx="1.2"/><rect x="84" y="10.0" width="2.4" height="19.9" rx="1.2"/><rect x="90" y="12.5" width="2.4" height="15.0" rx="1.2"/><rect x="96" y="12.1" width="2.4" height="15.8" rx="1.2"/><rect x="102" y="10.1" width="2.4" height="19.9" rx="1.2"/><rect x="108" y="10.0" width="2.4" height="20.0" rx="1.2"/><rect x="114" y="11.4" width="2.4" height="17.1" rx="1.2"/><rect x="120" y="12.8" width="2.4" height="14.4" rx="1.2"/><rect x="126" y="12.7" width="2.4" height="14.6" rx="1.2"/><rect x="132" y="10.9" width="2.4" height="18.1" rx="1.2"/><rect x="138" y="8.7" width="2.4" height="22.6" rx="1.2"/><rect x="144" y="7.8" width="2.4" height="24.4" rx="1.2"/><rect x="150" y="9.5" width="2.4" height="21.1" rx="1.2"/><rect x="156" y="11.1" width="2.4" height="17.8" rx="1.2"/><rect x="162" y="6.7" width="2.4" height="26.7" rx="1.2"/><rect x="168" y="4.2" width="2.4" height="31.6" rx="1.2"/><rect x="174" y="5.0" width="2.4" height="30.1" rx="1.2"/><rect x="180" y="8.2" width="2.4" height="23.5" rx="1.2"/><rect x="186" y="11.3" width="2.4" height="17.4" rx="1.2"/><rect x="192" y="9.1" width="2.4" height="21.9" rx="1.2"/><rect x="198" y="9.3" width="2.4" height="21.4" rx="1.2"/><rect x="204" y="11.1" width="2.4" height="17.8" rx="1.2"/><rect x="210" y="10.3" width="2.4" height="19.4" rx="1.2"/><rect x="216" y="11.1" width="2.4" height="17.8" rx="1.2"/><rect x="222" y="8.2" width="2.4" height="23.6" rx="1.2"/><rect x="228" y="4.6" width="2.4" height="30.7" rx="1.2"/><rect x="234" y="3.1" width="2.4" height="33.8" rx="1.2"/><rect x="240" y="5.0" width="2.4" height="29.9" rx="1.2"/><rect x="246" y="9.8" width="2.4" height="20.3" rx="1.2"/><rect x="252" y="6.7" width="2.4" height="26.5" rx="1.2"/><rect x="258" y="3.5" width="2.4" height="32.9" rx="1.2"/><rect x="264" y="3.8" width="2.4" height="32.4" rx="1.2"/><rect x="270" y="6.7" width="2.4" height="26.5" rx="1.2"/><rect x="276" y="10.1" width="2.4" height="19.9" rx="1.2"/><rect x="282" y="10.2" width="2.4" height="19.6" rx="1.2"/><rect x="288" y="10.5" width="2.4" height="19.0" rx="1.2"/><rect x="294" y="8.3" width="2.4" height="23.3" rx="1.2"/><rect x="300" y="7.3" width="2.4" height="25.4" rx="1.2"/><rect x="306" y="9.0" width="2.4" height="22.0" rx="1.2"/><rect x="312" y="8.6" width="2.4" height="22.7" rx="1.2"/><rect x="318" y="4.1" width="2.4" height="31.7" rx="1.2"/><rect x="324" y="1.9" width="2.4" height="36.2" rx="1.2"/><rect x="330" y="3.3" width="2.4" height="33.4" rx="1.2"/><rect x="336" y="7.7" width="2.4" height="24.6" rx="1.2"/><rect x="342" y="9.5" width="2.4" height="21.0" rx="1.2"/><rect x="348" y="6.5" width="2.4" height="27.0" rx="1.2"/><rect x="354" y="6.5" width="2.4" height="27.0" rx="1.2"/><rect x="360" y="8.7" width="2.4" height="22.6" rx="1.2"/><rect x="366" y="10.9" width="2.4" height="18.1" rx="1.2"/><rect x="372" y="11.3" width="2.4" height="17.3" rx="1.2"/><rect x="378" y="9.6" width="2.4" height="20.8" rx="1.2"/><rect x="384" y="7.2" width="2.4" height="25.7" rx="1.2"/><rect x="390" y="6.2" width="2.4" height="27.6" rx="1.2"/><rect x="396" y="8.0" width="2.4" height="24.0" rx="1.2"/><rect x="402" y="11.7" width="2.4" height="16.5" rx="1.2"/><rect x="408" y="7.4" width="2.4" height="25.2" rx="1.2"/><rect x="414" y="5.0" width="2.4" height="30.0" rx="1.2"/><rect x="420" y="5.6" width="2.4" height="28.7" rx="1.2"/><rect x="426" y="8.7" width="2.4" height="22.5" rx="1.2"/><rect x="432" y="12.3" width="2.4" height="15.4" rx="1.2"/><rect x="438" y="11.0" width="2.4" height="17.9" rx="1.2"/><rect x="444" y="11.3" width="2.4" height="17.4" rx="1.2"/><rect x="450" y="12.9" width="2.4" height="14.3" rx="1.2"/><rect x="456" y="12.3" width="2.4" height="15.3" rx="1.2"/><rect x="462" y="13.0" width="2.4" height="14.0" rx="1.2"/><rect x="468" y="11.9" width="2.4" height="16.1" rx="1.2"/><rect x="474" y="9.8" width="2.4" height="20.4" rx="1.2"/><rect x="480" y="9.0" width="2.4" height="22.1" rx="1.2"/><rect x="486" y="10.2" width="2.4" height="19.5" rx="1.2"/><rect x="492" y="13.1" width="2.4" height="13.8" rx="1.2"/><rect x="498" y="12.9" width="2.4" height="14.2" rx="1.2"/><rect x="504" y="11.4" width="2.4" height="17.1" rx="1.2"/><rect x="510" y="11.8" width="2.4" height="16.5" rx="1.2"/><rect x="516" y="13.3" width="2.4" height="13.3" rx="1.2"/><rect x="522" y="15.0" width="2.4" height="9.9" rx="1.2"/><rect x="528" y="15.6" width="2.4" height="8.8" rx="1.2"/><rect x="534" y="15.9" width="2.4" height="8.1" rx="1.2"/><rect x="540" y="15.6" width="2.4" height="8.8" rx="1.2"/><rect x="546" y="15.7" width="2.4" height="8.6" rx="1.2"/><rect x="552" y="16.5" width="2.4" height="7.1" rx="1.2"/><rect x="558" y="17.2" width="2.4" height="5.7" rx="1.2"/><rect x="564" y="17.2" width="2.4" height="5.5" rx="1.2"/><rect x="570" y="18.5" width="2.4" height="3.0" rx="1.2"/></g></svg>
+ <div class="contact"><span><em>Based</em>Carson City, NV 89706</span><span><em>Email</em>bazookazac@gmail.com</span><span><em>Phone</em>(702) 379-2800</span></div>
+ <div class="cols">
+  <div>
+   <section class="s-perf"><h2>Notable Performances</h2><ul class="tl"><li><span class="yr">2016</span><div><b>Hard Rock Hotel & Casino</b><i>Headliner</i><span class="loc">South Lake Tahoe, CA</span></div></li><li><span class="yr">2017</span><div><b>Wingfield Park, ArtTown</b><span class="loc">Reno, NV</span></div></li><li><span class="yr">2018</span><div><b>Crystal Bay Club</b><i>Headliner</i><span class="loc">Stateline, NV</span></div></li><li><span class="yr">2019</span><div><b>Grand Sierra Resort</b><span class="loc">Reno, NV</span></div></li><li><span class="yr">2019</span><div><b>Life is Beautiful, with Zack Gray</b><span class="loc">Las Vegas, NV</span></div></li><li><span class="yr">2020</span><div><b>House of Blues</b><span class="loc">Las Vegas, NV</span></div></li><li><span class="yr">2020</span><div><b>Thomas & Mack Arena</b><i>VJ set</i><span class="loc">Las Vegas, NV</span></div></li><li><span class="yr">2026</span><div><b>AREA15, with Clozee</b><span class="loc">Las Vegas, NV</span></div></li></ul>
+   <p class="note">After COVID-19 shut down live performance in 2020, I pivoted to studio-focused work.</p></section>
+   <section class="edu s-edu"><h2>Education</h2><div class="h"><b>UNR School of Music</b><span class="yr">2010–2015</span></div>
+    <ul><li>Recording Techniques &amp; MIDI 1 &amp; 2</li><li>Advanced Recording &amp; Mix Techniques</li><li>Film Theory</li></ul></section>
+  </div>
+  <div>
+   <section class="s-free"><h2>Freelance Projects</h2><ul class="fl"><li><div class="ft"><b>Luciano Design</b><i>Current</i></div><p>Sound design elements for gaming projects</p></li><li><div class="ft"><b>Nifty Gateway</b></div><p>Theme music for the <em>Awkward Astronauts</em> video game</p></li><li><div class="ft"><b>OpenSea</b></div><p>Creator of the world’s first performance NFT series, <em>Permanent Dreamscape</em></p></li></ul></section>
+   <section class="s-awards"><h2>Awards</h2><ul class="tl"><li><span class="yr">2012</span><div><b>Second Place</b><span class="loc">John Lennon International Songwriting Contest</span></div></li><li><span class="yr">2014</span><div><b>Musician of the Year</b><span class="loc">Raw Indie Arts Awards</span></div></li><li><span class="yr">2016</span><div><b>Best Music Score</b><span class="loc">Reynolds School of Journalism, UNR</span></div></li><li><span class="yr">2017</span><div><b>Best Electronic Musician</b><span class="loc">Forte Awards Reno</span></div></li></ul></section>
+   <section class="s-press"><h2>Featured In</h2><p class="press"><span>Channel 5 News Reno</span><span class="sep"> · </span><span>PBS Reno</span><span class="sep"> · </span><span>Relix Magazine</span><span class="sep"> · </span><span>Reno News &amp; Review</span><span class="sep"> · </span><span>The Sagebrush</span><span class="sep"> · </span><span>Insight Magazine</span><span class="sep"> · </span><span>Brushfire Literary Arts Journal</span><span class="sep"> · </span><span>Boulder City Review</span><span class="sep"> · </span><span>Reno Gazette Journal</span><span class="sep"> · </span><span>Wolfpack Radio</span><span class="sep"> · </span><span>5th Wall Art Gallery</span><span class="sep"> · </span><span>The Worst Little Podcast</span><span class="sep"> · </span><span>France Public Television</span></p></section>
+  </div>
+ </div>
+</div>
+
+<script>
+/* fit the landscape sheet to the window: zoom up to fill it, never past it */
+(function(){var p=document.querySelector(".page");
+ function fit(){p.style.zoom="";if(!matchMedia("(min-width:1000px) and (min-aspect-ratio:5/4)").matches)return;
+  var r=p.getBoundingClientRect(),z=Math.min(innerWidth/r.width,(innerHeight-6)/r.height);if(z>1.02)p.style.zoom=Math.min(z,2.2).toFixed(3);}
+ addEventListener("resize",fit);(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);fit();})();
+</script>
+</body>
+</html>
