@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bazooka Zac</title>
+<meta name="description" content="Bazooka Zac: environmental scientist // artist. Music, open-source Ableton projects, and Cosmic Creatures, coming December 1.">
+<meta property="og:title" content="Bazooka Zac">
+<meta property="og:description" content="environmental scientist // artist">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bazookazac.github.io/">
+<meta property="og:image" content="https://bazookazac.github.io/img/zac-maizy-480.webp">
+<meta name="theme-color" content="#0d0b11">
+<link rel="icon" href="img/zac-maizy-240.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+/* Bazooka Zac's link page (Zac 2026-11-16: "we can do better right? linktr.ee/bazookazac" → "make it look textured. sleek.
+   modern. should we use that painted space background?"). Layout: one column of smoked-glass plates floating over the game's
+   own painted spiral galaxy (the home screen), a film grain over everything; the game first, then his links in his order. */
+:root{
+  --night:#0b0911; --glass:rgba(14,11,22,.52); --glass-hi:rgba(28,22,40,.62); --edge:rgba(242,216,152,.26); --edge-hi:rgba(242,216,152,.75);
+  --cream:#f6eddf; --dim:#cbbfae; --gold:#d6a85c; --gold-hi:#f2d898; --ember:#c4452c; --ember-hi:#e0603f;
+  --display:Cinzel,"Trajan Pro",Georgia,serif; --text:"EB Garamond",Garamond,Georgia,serif;
+  --r:16px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;min-height:100vh;background:transparent;color:var(--cream);font:18px/1.5 var(--text);-webkit-font-smoothing:antialiased;
+  padding-block:max(40px,env(safe-area-inset-top,0px)) max(44px,env(safe-area-inset-bottom,0px));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* the painted galaxy, fixed behind the page; on a tall phone the dragon (top right of the painting) stays in view */
+.sky{position:fixed;inset:0;z-index:-3;overflow:hidden;background:var(--night)}
+.sky img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 0%;transform-origin:70% 20%}
+@media (prefers-reduced-motion:no-preference){ .sky img{animation:drift 60s ease-in-out infinite alternate} @keyframes drift{to{transform:scale(1.06) rotate(.6deg)}} }
+/* a dusk over the paint so every word reads, darker toward the bottom of the screen */
+.sky::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 70% at 50% 18%,rgba(11,9,17,.18),rgba(11,9,17,.55) 70%),
+  linear-gradient(180deg,rgba(11,9,17,.25),rgba(11,9,17,.72) 85%)}
+/* film grain: the texture */
+body::after{content:"";position:fixed;inset:-50%;z-index:-1;pointer-events:none;opacity:.14;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+.col{max-width:500px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:18px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+
+/* who */
+.me{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;margin-bottom:6px}
+.me .ring{border-radius:50%;padding:3px;background:conic-gradient(from 200deg,var(--gold-hi),rgba(196,69,44,.9),var(--gold),var(--gold-hi));box-shadow:0 0 34px rgba(242,196,120,.28),0 18px 40px rgba(0,0,0,.55)}
+.me img{display:block;width:118px;height:118px;border-radius:50%;object-fit:cover;border:3px solid var(--night)}
+.me h1{margin:8px 0 0;font:700 clamp(26px,7.4vw,34px)/1.05 var(--display);letter-spacing:.18em;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.8)}
+.me p{margin:0;font-style:italic;color:var(--dim);font-size:19px;text-shadow:0 1px 10px rgba(0,0,0,.9)}
+
+/* glass */
+.glass{background:var(--glass);border:1px solid var(--edge);border-radius:var(--r);
+  -webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 12px 34px rgba(0,0,0,.38)}
+
+/* the game */
+.game{width:100%;overflow:hidden}
+.game .art{position:relative;display:block}
+.game .art img.paint{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+.game .art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,22,0) 40%,rgba(14,11,22,.92) 100%)}
+.game .art img.mark{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);width:min(82%,370px);height:auto;z-index:1;filter:drop-shadow(0 3px 12px rgba(0,0,0,.9))}
+.game .body{padding:10px 14px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.game .when{margin:0;font:600 11.5px/1.45 var(--display);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-hi)}
+
+.btn{position:relative;display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;padding:12px 18px;text-decoration:none;
+  font:600 13px/1.25 var(--display);letter-spacing:.2em;text-transform:uppercase;text-align:center;color:var(--cream);
+  transition:border-color .2s,background .2s,transform .2s,box-shadow .2s}
+a.btn.glass:hover{border-color:var(--edge-hi);background:var(--glass-hi);transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 0 22px rgba(242,196,120,.18),0 14px 34px rgba(0,0,0,.45)}
+.btn.ember{border-radius:12px;background:linear-gradient(180deg,var(--ember-hi),var(--ember));border:1px solid rgba(255,190,160,.45);color:#fff6ef;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 26px rgba(120,30,10,.45)}
+a.btn.ember:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.26),0 0 24px rgba(224,96,63,.45),0 12px 28px rgba(120,30,10,.5)}
+.stores{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+.btn.soon{flex-direction:column;gap:3px;min-height:58px;border-radius:12px;cursor:default;color:var(--dim);font-size:11px;letter-spacing:.14em;
+  background:rgba(255,255,255,.03);border:1px solid rgba(242,216,152,.16)}
+.btn.soon small{font:italic 400 14px/1 var(--text);letter-spacing:.02em;text-transform:none;color:var(--gold-hi)}
+
+/* links */
+.links{width:100%;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+
+/* contact */
+.mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;color:var(--dim);font-size:17px;margin-top:4px;text-shadow:0 1px 10px rgba(0,0,0,.9)}
+.mail a{color:var(--gold-hi);text-underline-offset:3px}
+.copy{font:600 11px/1 var(--display);letter-spacing:.18em;text-transform:uppercase;color:var(--cream);background:var(--glass);border:1px solid var(--edge);border-radius:8px;padding:8px 11px;cursor:pointer;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.copy:hover{border-color:var(--edge-hi)}
+footer{color:var(--dim);font-size:14px;text-align:center;text-shadow:0 1px 10px rgba(0,0,0,.9)}
+@media (max-width:420px){ .stores{grid-template-columns:1fr} .btn{font-size:12.5px;letter-spacing:.13em} .btn > span{padding-inline:26px 0} }
+@media (prefers-reduced-motion:reduce){ .btn{transition:none} a.btn:hover{transform:none} }
+
+/* B&W badges (the game's icon family: black disc, white ring, white mark — like the circled eye) */
+.btn .ic{position:absolute;left:18px;top:50%;width:26px;height:26px;transform:translateY(-50%);flex:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55))}
+.btn img.ic{width:34px;height:34px;left:13px}
+.btn img.ic.r{left:auto;right:13px} /* Zac 11-16: "put the eyes on both sides" */ /* the circled eye keeps its own ring: it is the game's emblem */
+.btn > span{padding-inline:34px}
+.btn.soon .ic{position:static;transform:none;width:26px;height:26px;margin-bottom:6px}
+.btn.soon .lead{padding:0;font-size:10.5px;letter-spacing:.16em;color:var(--dim)}
+.btn.soon b{font:700 15px/1.2 var(--display);letter-spacing:.14em;color:var(--cream)}
+.btn.soon{min-height:0;padding-block:12px 11px}
+.mail .mailic{width:24px;height:24px}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"><img src="img/nebula-1200.webp" srcset="img/nebula-1200.webp 1200w, img/nebula-2200.webp 2200w" sizes="100vw" alt="" fetchpriority="high"></div>
+<main class="col">
+  <header class="me">
+    <span class="ring"><img src="img/zac-maizy-480.webp" srcset="img/zac-maizy-240.webp 1x, img/zac-maizy-480.webp 2x" width="120" height="120" alt="Bazooka Zac and Maizy"></span>
+    <h1>Bazooka Zac</h1>
+    <p>environmental scientist // artist</p>
+  </header>
+
+  <section class="game glass" aria-label="Cosmic Creatures">
+    <a class="art" href="cosmic-creatures/" aria-label="Cosmic Creatures game page">
+      <img class="paint" src="img/cc-eclipse-720.webp" srcset="img/cc-eclipse-720.webp 720w, img/cc-eclipse-1200.webp 1200w" sizes="(max-width:560px) 100vw, 520px" alt="">
+      <img class="mark" src="img/cc-wordmark.webp" alt="Cosmic Creatures">
+    </a>
+    <div class="body">
+      <p class="when">Coming to iPhone, iPad and Android · December 1</p>
+      <a class="btn ember" href="cosmic-creatures/"><img class="ic" src="img/eye-128.webp" alt=""><span>Visit the game page</span><img class="ic r" src="img/eye-128.webp" alt=""></a>
+      <div class="stores">
+        <span class="btn soon" aria-disabled="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span class="lead">Pre-order on the</span><b>App Store</b><small>Coming soon</small></span>
+        <span class="btn soon" aria-disabled="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span class="lead">Pre-register on</span><b>Google Play</b><small>Coming soon</small></span>
+      </div>
+    </div>
+  </section>
+
+  <ul class="links" aria-label="Links">
+    <li><a class="btn glass" href="https://www.instagram.com/bazookazac/"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span>Instagram</span></a></li>
+    <li><a class="btn glass" href="https://open.spotify.com/artist/0MWQqRBJ3SY0T0huSgQv57"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg><span>Spotify</span></a></li>
+    <li><a class="btn glass" href="https://bazookazac.bandcamp.com/"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"/></svg><span>Bandcamp</span></a></li>
+    <li><a class="btn glass" href="https://www.youtube.com/@BazookaZacMusic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>Cinematic Sounds - YouTube</span></a></li>
+    <li><a class="btn glass" href="https://bazookazac.gumroad.com/"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0Zm-.007 5.12c4.48 0 5.995 3.025 6.064 4.744h-3.239c-.069-.962-.897-2.406-2.896-2.406-2.136 0-3.514 1.857-3.514 4.126 0 2.27 1.378 4.125 3.514 4.125 1.93 0 2.758-1.512 3.103-3.025h-3.103v-1.238h6.509v6.327h-2.855v-3.989c-.207 1.444-1.102 4.264-4.617 4.264-3.516 0-5.584-2.82-5.584-6.326 0-3.645 2.276-6.602 6.618-6.602z"/></svg><span>Open-Source Ableton Projects</span></a></li>
+    <li><a class="btn glass" href="https://claude.ai/artifact/PQJp74YWgCb84tYkCdDA9y"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg><span>Musical Resume</span></a></li>
+    <li><a class="btn glass" href="https://opensea.io/collection/basedbeats"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 0C5.374 0 0 5.374 0 12s5.374 12 12 12 12-5.374 12-12S18.629 0 12 0ZM5.92 12.403l.051-.081 3.123-4.884a.107.107 0 0 1 .187.014c.52 1.169.972 2.623.76 3.528-.088.372-.335.876-.614 1.342a2.405 2.405 0 0 1-.117.199.106.106 0 0 1-.09.045H6.013a.106.106 0 0 1-.091-.163zm13.914 1.68a.109.109 0 0 1-.065.101c-.243.103-1.07.485-1.414.962-.878 1.222-1.548 2.97-3.048 2.97H9.053a4.019 4.019 0 0 1-4.013-4.028v-.072c0-.058.048-.106.108-.106h3.485c.07 0 .12.063.115.132-.026.226.017.459.125.67.206.42.636.682 1.099.682h1.726v-1.347H9.99a.11.11 0 0 1-.089-.173l.063-.09c.16-.231.391-.586.621-.992.156-.274.308-.566.43-.86.024-.052.043-.107.065-.16.033-.094.067-.182.091-.269a4.57 4.57 0 0 0 .065-.223c.057-.25.081-.514.081-.787 0-.108-.004-.221-.014-.327-.005-.117-.02-.235-.034-.352a3.415 3.415 0 0 0-.048-.312 6.494 6.494 0 0 0-.098-.468l-.014-.06c-.03-.108-.056-.21-.09-.317a11.824 11.824 0 0 0-.328-.972 5.212 5.212 0 0 0-.142-.355c-.072-.178-.146-.339-.213-.49a3.564 3.564 0 0 1-.094-.197 4.658 4.658 0 0 0-.103-.213c-.024-.053-.053-.104-.072-.152l-.211-.388c-.029-.053.019-.118.077-.101l1.32.357h.01l.173.05.192.054.07.019v-.783c0-.379.302-.686.679-.686a.66.66 0 0 1 .477.202.69.69 0 0 1 .2.484V6.65l.141.039c.01.005.022.01.031.017.034.024.084.062.147.11.05.038.103.086.165.137a10.351 10.351 0 0 1 .574.504c.214.199.454.432.684.691.065.074.127.146.192.226.062.079.132.156.19.232.079.104.16.212.235.324.033.053.074.108.105.161.096.142.178.288.257.435.034.067.067.141.096.213.089.197.159.396.202.598a.65.65 0 0 1 .029.132v.01c.014.057.019.12.024.184a2.057 2.057 0 0 1-.106.874c-.031.084-.06.17-.098.254-.075.17-.161.343-.264.502-.034.06-.075.122-.113.182-.043.063-.089.123-.127.18a3.89 3.89 0 0 1-.173.221c-.053.072-.106.144-.166.209-.081.098-.16.19-.245.278-.048.058-.1.118-.156.17-.052.06-.108.113-.156.161-.084.084-.15.147-.208.202l-.137.122a.102.102 0 0 1-.072.03h-1.051v1.346h1.322c.295 0 .576-.104.804-.298.077-.067.415-.36.816-.802a.094.094 0 0 1 .05-.03l3.65-1.057a.108.108 0 0 1 .138.103z"/></svg><span>Digital Collectibles</span></a></li>
+  </ul>
+
+  <div class="mail">
+    <svg class="ic mailic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:bazookazac@gmail.com" id="mail">bazookazac@gmail.com</a>
+    <button class="copy" id="copy" type="button">Copy</button>
+  </div>
+
+  <footer>© 2026 Bazooka Zac</footer>
+</main>
+<script>
+document.getElementById("copy").addEventListener("click",function(){
+  var b=this, t="bazookazac@gmail.com";
+  var done=function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy";},1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){sel();});}else{sel();}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("mail"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+});
+</script>
+</body>
+</html>
