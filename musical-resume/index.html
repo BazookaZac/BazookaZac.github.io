@@ -65,6 +65,14 @@ ul { list-style:none }
   .cols section { margin-top:0 !important }
   .s-perf { grid-area:perf } .s-free { grid-area:free } .s-awards { grid-area:awards } .s-edu { grid-area:edu } .s-press { grid-area:press }
 }
+
+/* ⭐ PHONES: one column (the original phone rule sat before the two-column rule and lost; it goes last now) */
+@media (max-width:640px) {
+  .cols { grid-template-columns:1fr; gap:.34in }
+  h1 { font-size:13vw; white-space:normal }
+  .contact { gap:6px 22px }
+  .note { padding-left:0 }
+}
 </style>
 </head>
 <body>
@@ -90,10 +98,14 @@ ul { list-style:none }
 </div>
 
 <script>
-/* fit the landscape sheet to the window: zoom up to fill it, never past it */
-(function(){var p=document.querySelector(".page");
- function fit(){p.style.zoom="";if(!matchMedia("(min-width:1000px) and (min-aspect-ratio:5/4)").matches)return;
-  var r=p.getBoundingClientRect(),z=Math.min(innerWidth/r.width,(innerHeight-6)/r.height);if(z>1.02)p.style.zoom=Math.min(z,2.2).toFixed(3);}
+/* the sheet changes shape with the screen (Zac 11-16 "can it transform for different screens?"):
+   wide screens = landscape sheet zoomed to fill the window · tablets upright = the letter sheet zoomed to fill ·
+   phones = one column, natural size, scroll */
+(function(){var p=document.querySelector(".page"),wide=matchMedia("(min-width:1000px) and (min-aspect-ratio:5/4)");
+ function fit(){p.style.zoom="";if(innerWidth<700)return;
+  var r=p.getBoundingClientRect(),z=Math.min(innerWidth/r.width,(innerHeight-6)/r.height);
+  if(!wide.matches)z=Math.min(z,innerWidth/r.width);
+  if(z>1.02)p.style.zoom=Math.min(z,2.2).toFixed(3);}
  addEventListener("resize",fit);(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);fit();})();
 </script>
 </body>
